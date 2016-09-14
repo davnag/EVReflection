@@ -125,7 +125,7 @@ class WorkaroundObject: EVObject, EVArrayConvertable {
     var structType: CGPoint = CGPoint(x: 0, y: 0)
     
     // Handling the setting of non key-value coding compliant properties
-    override func setValue(value: AnyObject!, forUndefinedKey key: String) {
+    override func setValue(value: Any!, forUndefinedKey key: String) {
         switch key {
         case "nullableType":
             nullableType = value as? Int

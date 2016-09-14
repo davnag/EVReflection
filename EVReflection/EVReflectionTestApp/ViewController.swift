@@ -74,7 +74,7 @@ class ViewController: UIViewController {
     
     // MARK: - Executing the tests
     
-    @IBAction func test1(sender: AnyObject) {
+    @IBAction func test1(sender: Any) {
         doTest {
             let a = TestObject1()
             for i in 1...1000 {
@@ -86,14 +86,14 @@ class ViewController: UIViewController {
         }
     }
 
-    @IBAction func test2(sender: AnyObject) {
+    @IBAction func test2(sender: Any) {
         doTest {
             let test = ArrayDeserializationPerformanceTest()
             test.performanceTest1()
         }
     }
 
-    @IBAction func test3(sender: AnyObject) {
+    @IBAction func test3(sender: Any) {
         doTest {
             let a = TestObject1()
             a.ListObject2?.append(TestObject2(id: 1))

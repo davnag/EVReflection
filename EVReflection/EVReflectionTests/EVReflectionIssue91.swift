@@ -67,7 +67,7 @@ class TagObject: BaseObject {
 class TagObject2: BaseObject {
     var subTagArray: [SimpleObject]?
     
-    override func setValue(value: AnyObject!, forUndefinedKey key: String) {
+    override func setValue(value: Any!, forUndefinedKey key: String) {
         guard let dict = value as? [NSDictionary] else { return }
         switch key {
         case "provinces", "values", "subTags":

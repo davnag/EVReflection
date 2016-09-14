@@ -67,7 +67,7 @@ class Tied: EVObject {
     var _type: StartStopContinueEnum = .none
     var _orientation: OrientationEnum?
     
-    override func setValue(value: AnyObject!, forUndefinedKey key: String) {
+    override func setValue(value: Any!, forUndefinedKey key: String) {
         switch key {
         case "_type":
             if let rawValue = value as? String {

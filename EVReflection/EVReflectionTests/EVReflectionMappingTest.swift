@@ -79,7 +79,7 @@ public class GameUser: EVObject {
     var memberSince: NSDate?
     var objectIsNotAValue: TestObject?
     
-    func validateName(value: AutoreleasingUnsafeMutablePointer<AnyObject?>) throws {
+    func validateName(value: AutoreleasingUnsafeMutablePointer<Any?>) throws {
         if let theValue = value.memory as? String {
             if theValue.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) < 3 {
                 NSLog("Validating name is not long enough \(theValue)")
@@ -98,7 +98,7 @@ public class GamePlayer: GameUser {
     var rating: Int = 0
 
     // This way we can solve that the JSON has arbitrary keys or wrong values
-    override public func setValue(value: AnyObject!, forUndefinedKey key: String) {
+    override public func setValue(value: Any!, forUndefinedKey key: String) {
         NSLog("---> setValue for key '\(key)' should be handled or the value is of the wrong type: \(value).")
     }
 }

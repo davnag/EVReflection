@@ -77,7 +77,7 @@ public extension Array where Element: NSObject {
     
     - returns: The object type
     */
-    public func getArrayTypeInstance<T: NSObject>(arr: Array<T>) -> T {
+    public func getArrayTypeInstance<T: NSObject>(_ arr: Array<T>) -> T {
         return arr.getTypeInstance()
     }
     
@@ -109,8 +109,8 @@ public extension Array where Element: NSObject {
     
     - returns: The json string
     */
-    public func toJsonString(conversionOptions: ConversionOptions = .DefaultSerialize) -> String {
-        return "[\n" + self.map({($0 as? EVObject ?? EVObject()).toJsonString(conversionOptions)}).joinWithSeparator(", \n") + "\n]"
+    public func toJsonString(_ conversionOptions: ConversionOptions = .DefaultSerialize) -> String {
+        return "[\n" + self.map({($0 as? EVObject ?? EVObject()).toJsonString(conversionOptions)}).joined(separator: ", \n") + "\n]"
     }
     
     /**
@@ -120,7 +120,7 @@ public extension Array where Element: NSObject {
      
      - returns: The array of dictionaries
      */
-    public func toDictionaryArray(conversionOptions: ConversionOptions = .DefaultSerialize) -> NSArray {
-        return self.map({($0 as? EVObject ?? EVObject()).toDictionary(conversionOptions)})
+    public func toDictionaryArray(_ conversionOptions: ConversionOptions = .DefaultSerialize) -> NSArray {
+        return self.map({($0 as? EVObject ?? EVObject()).toDictionary(conversionOptions)}) as NSArray
     }
 }

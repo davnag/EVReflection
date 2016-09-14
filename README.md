@@ -283,7 +283,7 @@ public class GameUser: EVObject {
    var memberSince: NSDate?
    var objectIsNotAValue: TestObject?
 
-   func validateName(value:AutoreleasingUnsafeMutablePointer<AnyObject?>) throws {
+   func validateName(value:AutoreleasingUnsafeMutablePointer<Any?>) throws {
       if let theValue = value.memory as? String {
          if theValue.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) < 3 {
             NSLog("Validating name is not long enough \(theValue)")

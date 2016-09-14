@@ -65,7 +65,7 @@ class Encoding: EVObject {
     var Xsoftware: [Software]?
     var supports: [Supports]?
 
-    internal override func setValue(value: AnyObject!, forUndefinedKey key: String) {
+    internal override func setValue(value: Any!, forUndefinedKey key: String) {
         if key == "software" {
             Xsoftware = (value as! [String]).map { Software(software: $0) }
             return

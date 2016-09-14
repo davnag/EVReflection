@@ -57,7 +57,7 @@ public class TestObject4: EVObject, EVArrayConvertable {
     var invalid_character: String?
     var list: [TestObject4] = []
     var myAny: Any?
-    var myAnyObject: AnyObject?
+    var myAny: Any?
     var rect: CGRect?
     var array: [TestObject2] = [TestObject2(), TestObject2()]
     var array2: NSMutableArray = NSMutableArray()
@@ -89,7 +89,7 @@ class TestObject3: EVObject {
     var nullableType: Int?
     
     // This construction can be used to bypass the issue for setting a nullable type field
-    override func setValue(value: AnyObject!, forUndefinedKey key: String) {
+    override func setValue(value: Any!, forUndefinedKey key: String) {
         switch key {
         case "nullableType":
             nullableType = value as? Int
@@ -218,7 +218,7 @@ class NestedArraysResult: EVObject {
     var planets = [String: [[NSNumber]]]()
     
     // This way we can solve that the JSON has arbitrary keys
-    internal override func setValue(value: AnyObject!, forUndefinedKey key: String) {
+    internal override func setValue(value: Any!, forUndefinedKey key: String) {
         if let a = value as? [[NSNumber]] {
             planets[key] = a
             return
@@ -244,7 +244,7 @@ public class ValidateObject: EVObject {
         }
     }
     
-    func validateOptionalKey3(value: AutoreleasingUnsafeMutablePointer<AnyObject?>) throws {
+    func validateOptionalKey3(value: AutoreleasingUnsafeMutablePointer<Any?>) throws {
         if let theValue = value.memory as? String {
             if theValue.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) < 3 {
                 self.addStatusMessage(.InvalidValue, message: "optionalKey3 should be at least 3 characters long: '\(value)'")

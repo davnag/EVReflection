@@ -20,7 +20,7 @@ public class Message: EVObject {
     var users: [String:String] = [String:String]()
     
     // Handling the setting of non key-value coding compliant properties
-    override public func setValue(value: AnyObject!, forUndefinedKey key: String) {
+    override public func setValue(value: Any!, forUndefinedKey key: String) {
         switch key {
         case "users":
             if let dict = value as? NSDictionary {

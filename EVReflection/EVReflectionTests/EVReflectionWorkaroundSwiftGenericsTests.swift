@@ -102,7 +102,7 @@ public class MyGenericObject<T where T:NSObject>: MyGenericBase, EVGenericsKVC {
         super.init()
     }
     
-    public override func setValue(value: AnyObject!, forUndefinedKey key: String) {
+    public override func setValue(value: Any!, forUndefinedKey key: String) {
         switch key {
         case "data":
             data = value as? T ?? T()
@@ -146,7 +146,7 @@ public class TestGenerics: EVObject {
     var bar: MyGenericObject<InstanceObject> = MyGenericObject<InstanceObject>()
     var unhandledBar: MyGenericObject<InstanceObject> = MyGenericObject<InstanceObject>()
     
-    public override func setValue(value: AnyObject!, forUndefinedKey key: String) {
+    public override func setValue(value: Any!, forUndefinedKey key: String) {
         switch key {
         case "bar":
             bar = value as? MyGenericObject<InstanceObject> ?? MyGenericObject<InstanceObject>()

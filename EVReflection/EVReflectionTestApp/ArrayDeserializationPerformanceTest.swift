@@ -17,7 +17,7 @@ class User: EVObject {
     var closeFriends: [User]? = []
     var birthDate: NSDate?
     
-    override func setValue(value: AnyObject!, forUndefinedKey key: String) {
+    override func setValue(value: Any!, forUndefinedKey key: String) {
         
     }
 }

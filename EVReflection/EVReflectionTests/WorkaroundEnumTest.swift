@@ -58,12 +58,12 @@ class EnumWorkaroundsTests: XCTestCase {
         XCTAssertNil(a.value, "Associated value should be nil")
     }
     
-    func parseArray(array: Any) -> AnyObject {
-        if let arrayObject: AnyObject = array as? AnyObject {
+    func parseArray(array: Any) -> Any {
+        if let arrayObject: Any = array as? Any {
             return arrayObject
         }
-        print("array was not an AnyObject")
-        var temp = [AnyObject]()
+        print("array was not an Any")
+        var temp = [Any]()
         for item in (array as? [myClass?] ?? [myClass?]()) {
             if item != nil {
                 temp.append(item!)
